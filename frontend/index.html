@@ -1,13 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+   
+    <title>BeaconLog - Registrador de Eventos del DOM</title>
+    <meta name="description" content="BeaconLog es una herramienta para registrar y monitorear eventos del DOM como clicks, visualizaciones de página y scroll en tiempo real." />
+    <meta name="keywords" content="DOM events, event logging, web analytics, click tracking, page view tracking, scroll tracking, BeaconLog" />
+    <meta name="author" content="BeaconLog" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="es" />
+    
+
+    <meta property="og:title" content="BeaconLog - Registrador de Eventos del DOM" />
+    <meta property="og:description" content="Herramienta para registrar y monitorear eventos del DOM como clicks, visualizaciones de página y scroll en tiempo real." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BeaconLog" />
+    <meta property="og:locale" content="es_ES" />
+    
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="BeaconLog - Registrador de Eventos del DOM" />
+    <meta name="twitter:description" content="Herramienta para registrar y monitorear eventos del DOM como clicks, visualizaciones de página y scroll en tiempo real." />
+    
+
+    <meta name="theme-color" content="#ffffff" />
+
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1 class="text-red-500 text-6xl">Registrador de eventos del DOM</h1>
+    </header>
+      <main>
+
+        <aside>
+          <article>
+            <p id="event-title">Lista de eventos:</p>
+            <ol>
+              <li>CLICK</li>
+              <li>PAGE_VIEW</li>
+              <li>SCROLL</li>
+            </ol>
+          </article>
+        </aside>
+
+        <h2>Tus eventos</h2>
+
+        <article id="user-events-container">
+          <button id="request_button">Obtener tus eventos</button>
+
+          <ul id="item-container"></ul>
+        </article>
+
+      </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
+
 </html>

@@ -1,0 +1,39 @@
+header {
+  margin-top: 10vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+#event-title {
+  font-size: larger;
+}
+
+ol > li:first-child {
+  color: green
+}
+ol > li:last-child {
+  color: purple
+}
+
+main > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user-events-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+#events {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
