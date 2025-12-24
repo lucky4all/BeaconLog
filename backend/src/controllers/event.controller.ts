@@ -3,15 +3,23 @@ import { zValidator} from '@hono/zod-validator'
 import { EventRequest } from '../schemas/event.schema.js'
 import { DBService } from '../services/db.service.js'
 import { HTTPException } from 'hono/http-exception'
+import z from 'zod';
 
 export const eventController = new Hono()
 const db = new DBService()
 
-eventController.get('/events', async (c) => {
+eventController.get('/events', zValidator('query', z.object({ uuid: z.string().min(1) }), (result, c) => {
+    if (!result.success) {
+        return c.json({ message: "Error de validación", error: result.error.issues }, 400);
+    }
+}), async (c) => {
     try {
-        
+        let validated_query = c.req.valid('query');
+        let database_operation = await db.getEventsByUUID(validated_query.uuid)
+        return c.json(database_operation)
     } catch(error) {
-
+        console.log(error)
+        throw new HTTPException(500, { message: "No se ha podido obtener los eventos" })
     }
 })
 
