@@ -9,7 +9,9 @@ import { rateLimiter } from 'hono-rate-limiter'
 
 const app = new Hono()
 
-app.use(cors())
+app.use(cors({
+  origin: "https://beacon-log.netlify.app/"
+}))
 app.use(secureHeaders())
 app.use(logger())
 app.use(csrf())
