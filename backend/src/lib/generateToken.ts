@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto'
 
-const generateUniqueToken = () => {
+export const generateUniqueToken = () => {
     return randomUUID()
 }
